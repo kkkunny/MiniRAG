@@ -33,7 +33,8 @@ WORKDIR /app
 COPY --from=builder /root/.local /root/.local
 COPY ./minirag ./minirag
 COPY setup.py .
-COPY .env .
+#COPY .env .
+RUN touch .env
 
 RUN pip install .
 # Make sure scripts in .local are usable
